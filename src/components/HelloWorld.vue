@@ -1,102 +1,48 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+    <gc-spread-sheets-designer
+      :styleInfo="styleInfo"
+      :config="config"
+      @designerInitialized="designerInitialized"
+    >
+    </gc-spread-sheets-designer>
   </div>
 </template>
 
 <script>
+import "@grapecity/spread-sheets/styles/gc.spread.sheets.excel2013white.css";
+import "@grapecity/spread-sheets-designer/styles/gc.spread.sheets.designer.min.css";
+import GC from "@grapecity/spread-sheets";
+import "@grapecity/spread-sheets-pivot-addon";
+import "@grapecity/spread-sheets-resources-zh";
+GC.Spread.Common.CultureManager.culture("zh-cn");
+import "@grapecity/spread-sheets-designer-resources-cn";
+import { Designer } from "@grapecity/spread-sheets-designer-vue";
 export default {
-  name: 'HelloWorld',
-  data () {
+  name: "HelloWorld",
+  data: function() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      styleInfo: {
+        height: "800px",
+        width: "1200px",
+        border: "solid red 1px"
+      },
+      config: null,
+      designer: null
+    };
+  },
+  methods: {
+    designerInitialized(value) {
+      this.designer = value;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
