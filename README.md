@@ -1,4 +1,4 @@
-# vue2
+# vue2.1
 
 > A Vue.js project
 
@@ -19,6 +19,3 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-
-@grapecity/spread-excelio @grapecity/spread-sheets @grapecity/spread-sheets-barcode @grapecity/spread-sheets-charts @grapecity/spread-sheets-languagepackages @grapecity/spread-sheets-pdf @grapecity/spread-sheets-print @grapecity/spread-sheets-resources-zh @grapecity/spread-sheets-shapes @grapecity/spread-sheets-pivots @grapecity/spread-sheets-designer @grapecity/spread-sheets-designer-resources-cn @grapecity/spread-sheets-designer-vue
