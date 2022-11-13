@@ -9,6 +9,10 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: resolve=>require(['@/pages/index.vue'],resolve)
+    },{
+      path:'/customerDirective',
+      name:'CustomerDirective',
+      component:resolve=>require(['@/pages/child/customerDirective.vue'],resolve)
     }
   ]
 })
