@@ -9,6 +9,11 @@ import router from './router'
 
 import dxUI from "dxtestui"
 Vue.use(dxUI)
+
+import Elementui from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(Elementui)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

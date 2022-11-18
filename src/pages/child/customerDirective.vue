@@ -8,7 +8,6 @@
         <var>componentUpdated:所在组件的虚拟节点及其子虚拟节点全部更新后调用</var>、<br/>
         <var>unbind:指令与元素解绑时调用</var><br/>
     </p>
-
     <img src="@/assets/directive.png" alt="">
     <img src="@/assets/directive-use.png" alt="">
     <input type="text" v-focus v-show="isShow">
@@ -41,7 +40,7 @@ directives:{
     */
     focus:{
         bind:function(el,binding,vnode){
-            console.log('bind')
+            console.log('自定义指令-bind')
         },
         inserted:function(el,binding,vnode){
             el.focus()
@@ -77,6 +76,7 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
 <style lang='less' scoped>
+
 p{
     text-align: left;
 }

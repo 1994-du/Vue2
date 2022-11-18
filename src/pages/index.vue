@@ -1,46 +1,35 @@
 <!--  -->
 <template>
 <div  class="home">
-    <dx-button type="default" @click.native="$router.push('/customerDirective')">自定义指令</dx-button>
+    <dx-button type="default" @click="$router.push('/customerDirective')">自定义指令</dx-button>
+    <dx-button type="default" @click="$router.push('/useRoute')">路由导航钩子函数</dx-button>
+    <dx-button type="default" @click="$router.push('/useSlot')">插槽</dx-button>
+    <dx-button type="default" @click="$router.push('/useElectronApp')">创建electron桌面应用项目</dx-button>
 </div>
 </template>
 
 <script>
-
 export default {
 name:'',
-//import引入的组件需要注入到对象中才能使用
-components: {},
 data() {
-//这里存放数据
-return {
+    return {
 
-};
+    };
 },
-//监听属性 类似于data概念Vue.set(target, key, value)
 computed: {},
-//监控data中的数据变化
 watch: {},
-//方法集合
-methods: {
-
-},
-//生命周期 - 创建完成（可以访问当前this实例）
+methods: {},
 created() {},
-//生命周期 - 挂载完成（可以访问DOM元素）
-mounted() {
-
-},
-beforeCreate() {}, //生命周期 - 创建之前
-beforeMount() {}, //生命周期 - 挂载之前
-beforeUpdate() {}, //生命周期 - 更新之前
-updated() {}, //生命周期 - 更新之后
-beforeDestroy() {}, //生命周期 - 销毁之前
-destroyed() {}, //生命周期 - 销毁完成
-activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
+mounted() {},
+beforeCreate() {}, 
+beforeMount() {}, 
+beforeUpdate() {}, 
+updated() {}, 
+beforeDestroy() {}, 
+destroyed() {}, 
+activated() {},
 }
 </script>
 <style lang='less' scoped>
 //@import url(); 引入公共css类
-
 </style>
