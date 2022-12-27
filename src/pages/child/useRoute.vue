@@ -3,11 +3,11 @@
 <div class="use_route">
     <h2>导航守卫（导航钩子）</h2>
     <p>全局</p>
-    <img src="@/assets/useRoute.png" alt="">
+    <img src="@/static/useRoute.png" alt="">
     <p>单个路由</p>
-    <img src="@/assets/useRoute-2.png" alt="">
+    <img src="@/static/useRoute-2.png" alt="">
     <p>组件内钩子</p>
-    <img src="@/assets/useRoute-3.png" alt="">
+    <img src="@/static/useRoute-3.png" alt="">
 </div>
 </template>
 

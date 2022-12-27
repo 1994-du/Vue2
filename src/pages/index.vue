@@ -5,6 +5,8 @@
     <dx-button type="default" @click="$router.push('/useRoute')">路由导航钩子函数</dx-button>
     <dx-button type="default" @click="$router.push('/useSlot')">插槽</dx-button>
     <dx-button type="default" @click="$router.push('/useElectronApp')">创建electron桌面应用项目</dx-button>
+    <dx-button @click="$router.push('/useAxios')">axios</dx-button>
+    <dx-button @click="$router.push('/useHttp')">HTTP</dx-button>
 </div>
 </template>
 

@@ -2,6 +2,7 @@
 <template>
 <div>
     <h2>useSlot</h2>
+    <p>具名插槽、作用域插槽</p>
     <useSlot1Vue>
         <template #header="{person}">
             <p>具名插槽头部--插槽数据：{{person.name}}</p>
@@ -13,7 +14,7 @@
             <p>具名插槽尾部</p>
         </template>
     </useSlot1Vue>
-    <img src="@/assets/useSlot.png" alt="">
+    <img src="@/static/useSlot.png" alt="">
 </div>
 </template>
 

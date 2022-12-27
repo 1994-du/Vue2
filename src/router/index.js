@@ -32,19 +32,28 @@ const router = new Router({
       path:'/useElectronApp',
       name:'useElectronApp',
       component:resolve=>require(['@/pages/child/useElectron.vue'],resolve)
+    },
+    {
+      path:"/useAxios",
+      name:'useAxios',
+      component:resolve=>require(['@/pages/child/useAxios.vue'],resolve)
+    },
+    {
+      path:"/useHttp",
+      name:'useHttp',
+      component:resolve=>require(['@/pages/child/useHttp.vue'],resolve)
     }
   ]
 })
-console.log(router)
 //全局导航钩子函数
 router.beforeEach((to,from,next)=>{
-  console.log('全局导航钩子函数-beforeEach',to)
+  // console.log('全局导航钩子函数-beforeEach',to)
   next()
   //next(false)--中断当前导航
   //next('/')--跳转到其他地址，当前导航被中断
   //确保调用next方法，否则钩子不会被resolved
 })
 router.afterEach((route)=>{
-  console.log('全局导航钩子函数-afterEach',route)
+  // console.log('全局导航钩子函数-afterEach',route)
 })
 export default router

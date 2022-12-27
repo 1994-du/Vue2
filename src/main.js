@@ -14,7 +14,17 @@ import Elementui from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(Elementui)
 
+import axios from "@/axios"
+Vue.prototype.$axios=axios
 Vue.config.productionTip = false
+
+//全局自定义指令
+Vue.directive('directivename',{
+  inserted:(el)=>{
+    el.style.padding='5px'
+    el.style.border='1px solid red'
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
