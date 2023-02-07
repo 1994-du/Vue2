@@ -1,5 +1,8 @@
 module.exports={
     devServer:{
-        disableHostCheck:true
+        disableHostCheck:true,
+        headers:{
+            'Access-Control-Allow-Origin':'*'
+        }
     }
 }

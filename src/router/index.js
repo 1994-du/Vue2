@@ -4,45 +4,22 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const router = new Router({
+  base:window.__MICRO_APP_BASE_ROUTE__||'/',
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'home',
       component: resolve=>require(['@/pages/index.vue'],resolve)
-    },{
-      path:'/customerDirective',
-      name:'CustomerDirective',
-      component:resolve=>require(['@/pages/child/customerDirective.vue'],resolve)
     },
     {
-      path:'/useRoute',
-      name:'UseRoute',
-      component:resolve=>require(['@/pages/child/useRoute.vue'],resolve),
+      path:'/dxtestui',
+      name:'dxtestui',
+      component:resolve=>require(['@/pages/dxtestui.vue'],resolve),
       //此路由独享钩子
       beforeEnter:(to,from,next)=>{
         next()
       }
     },
-    {
-      path:'/useSlot',
-      name:'UseSlot',
-      component:resolve=>require(['@/pages/child/useSlot.vue'],resolve)
-    },
-    {
-      path:'/useElectronApp',
-      name:'useElectronApp',
-      component:resolve=>require(['@/pages/child/useElectron.vue'],resolve)
-    },
-    {
-      path:"/useAxios",
-      name:'useAxios',
-      component:resolve=>require(['@/pages/child/useAxios.vue'],resolve)
-    },
-    {
-      path:"/useHttp",
-      name:'useHttp',
-      component:resolve=>require(['@/pages/child/useHttp.vue'],resolve)
-    }
   ]
 })
 //全局导航钩子函数

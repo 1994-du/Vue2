@@ -10,6 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@jridgewell/sourcemap-codec": "^1.4.14",
+    "@micro-zoe/micro-app": "^0.8.10",
     "dxtestui": "^0.2.5",
     "element-ui": "^2.15.9",
     "vue": "^2.5.2",
