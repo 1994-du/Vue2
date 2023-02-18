@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 Vue.use(Router)
 
 const router = new Router({
   base:window.__MICRO_APP_BASE_ROUTE__||'/',
+  mode:'history',
   routes: [
     {
       path: '/',
@@ -20,6 +20,18 @@ const router = new Router({
         next()
       }
     },
+    {
+        path:'/vue/vue3',
+        name:'vue3',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/vue3.vue'],resolve)
+    },
+    {
+        path:'/html',
+        name:'html',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/html.vue'],resolve)
+    }
   ]
 })
 //全局导航钩子函数
