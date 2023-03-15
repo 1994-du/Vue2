@@ -17,7 +17,8 @@ Vue.use(Elementui)
 import axios from "@/axios"
 Vue.prototype.$axios=axios
 Vue.config.productionTip = false
-
+import test from '@/pages'
+console.log(test)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
