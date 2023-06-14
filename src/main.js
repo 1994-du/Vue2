@@ -3,10 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
 // import globalUi from "./components/index.js";
 // Vue.use(globalUi)
-
+Vue.use(Antd)
 import dxUI from "dxtestui"
 Vue.use(dxUI)
 
@@ -17,8 +18,8 @@ Vue.use(Elementui)
 import axios from "@/axios"
 Vue.prototype.$axios=axios
 Vue.config.productionTip = false
-import test from '@/pages'
-console.log(test)
+// import test from '@/pages'
+// console.log(test)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

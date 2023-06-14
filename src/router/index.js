@@ -31,6 +31,12 @@ const router = new Router({
         name:'html',
         // component:import('@/pages/vue3.vue')
         component:resolve=>require(['@/pages/html.vue'],resolve)
+    },
+    {
+        path:'/upload',
+        name:'upload',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/upload.vue'],resolve)
     }
   ]
 })
