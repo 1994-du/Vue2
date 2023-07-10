@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div class="menus">
-      <div v-for="(item,index) in menus">
-        <el-button @click="$router.push(item.path)">{{ item.name }}</el-button>
-      </div>
+      <el-button v-for="(item,index) in menus" @click="$router.push(item.path)">{{ item.name }}</el-button>
     </div>
-    <router-view></router-view>
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -41,14 +41,16 @@ export default {
 //   flex-direction: column;
   height: 100%;
   @fontSize:12px;
-  .el-menu{
-    width: 200px;
-    flex-shrink: 0;
+  .menus{
+    display: flex;
+    flex-direction: column;
+    .el-button{
+      margin: 5px 0;
+    }
   }
-  .content_wrap{
+  .content{
     flex: 1;
-    font-size: @fontSize;
+    padding: 10px;
   }
-  
 }
 </style>

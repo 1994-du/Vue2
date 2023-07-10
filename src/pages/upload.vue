@@ -1,7 +1,7 @@
 <template>
     <div class="upload">
         <a-upload name="file" :multiple="false" :fileList="fileList" @change="handChange" :beforeUpload="(file)=>handBeforeChange(file,0)" :remove="handRemove">
-            <a-button :class="resarr.indexOf(0)>-1?'active':''"> <a-icon type="upload" /> 权重 {{ resarr }}</a-button>
+            <a-button :class="resarr.indexOf(0)>-1?'active':''"> <a-icon type="upload" /> 权重 </a-button>
         </a-upload>
         <a-upload name="file" :multiple="false" :showUploadList="false" @change="handChange" :beforeUpload="(file)=>handBeforeChange(file,1)" :remove="handRemove">
             <a-button :class="resarr.indexOf(1)>-1?'active':''"> <a-icon type="upload" /> 题目 </a-button>
@@ -12,7 +12,7 @@
         <a-upload name="file" :multiple="false" :showUploadList="false" @change="handChange" :beforeUpload="(file)=>handBeforeChange(file,3)" :remove="handRemove">
             <a-button :class="resarr.indexOf(3)>-1?'active':''"> <a-icon type="upload" /> 规则 </a-button>
         </a-upload>
-        <a-button @click="getRes">导入</a-button>
+        <a-button @click="getRes">导入{{ resarr }}</a-button>
     </div>
 </template>
 <script>
@@ -74,7 +74,7 @@ export default{
 .upload{
     display: flex;
     .active{
-        background-color: red;
+        background-color: rgb(70, 150, 216);
     }
 }
 </style>

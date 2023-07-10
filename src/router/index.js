@@ -3,7 +3,6 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const router = new Router({
-  base:window.__MICRO_APP_BASE_ROUTE__||'/',
   mode:'history',
   routes: [
     {
@@ -12,31 +11,16 @@ const router = new Router({
       component: resolve=>require(['@/pages/index.vue'],resolve)
     },
     {
-      path:'/dxtestui',
-      name:'dxtestui',
-      component:resolve=>require(['@/pages/dxtestui.vue'],resolve),
-      //此路由独享钩子
-      beforeEnter:(to,from,next)=>{
-        next()
-      }
-    },
-    {
-        path:'/vue/vue3',
-        name:'vue3',
-        // component:import('@/pages/vue3.vue')
-        component:resolve=>require(['@/pages/vue3.vue'],resolve)
-    },
-    {
-        path:'/html',
-        name:'html',
-        // component:import('@/pages/vue3.vue')
-        component:resolve=>require(['@/pages/html.vue'],resolve)
-    },
-    {
         path:'/upload',
         name:'upload',
         // component:import('@/pages/vue3.vue')
         component:resolve=>require(['@/pages/upload.vue'],resolve)
+    },
+    {
+        path:'/tree',
+        name:'tree',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/tree.vue'],resolve)
     }
   ]
 })
