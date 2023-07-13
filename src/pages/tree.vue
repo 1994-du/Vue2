@@ -1,11 +1,30 @@
 <template>
     <div class="tree_tmp">
+        <a-select style="width: 120px" @change="handleChange" v-model="selectIndex">
+            <a-select-option value="0">
+                Jack
+            </a-select-option>
+            <a-select-option value="1">
+                Lucy
+            </a-select-option>
+            <a-select-option value="2">
+                Disabled
+            </a-select-option>
+        </a-select>
         <a-tree
-            v-model="checkedKeys"
+            v-model="checkedKeysUp"
             checkable
-            :tree-data="treeData"
+            :tree-data="treeDataUp"
             :replaceFields="replaceFields"
-            @check="onCheck"
+            @check="onCheckUp"
+        />
+        <hr>
+        <a-tree
+            v-model="checkedKeysDown"
+            checkable
+            :tree-data="treeDataDown"
+            :replaceFields="replaceFields"
+            @check="onCheckDown"
         />
     </div>
 </template>
@@ -14,25 +33,86 @@ import data from "@/json/tree.json"
 export default{
     data(){
         return{
-            checkedKeys:[],
+            checkedKeysUp:[],
+            treeDataUp:[],
+            checkedKeysDown:[],
+            treeDataDown:[],
             replaceFields:{
                 title:'name',
                 key:'id',
                 children:'children'
-            }
-        }
-    },
-    computed:{
-        treeData(){
-            return data
+            },
+            selectIndex:'0',
+            allKeys:[]
         }
     },
     mounted(){
-        console.log(data);
+        this.treeDataUp=JSON.parse(JSON.stringify(data))
+        this.treeDataDown=JSON.parse(JSON.stringify(data))
     },
     methods:{
-        onCheck(keys,e){
-            console.log(keys,e);
+        handleChange(val){
+            // tree数据初始化
+            this.treeDataUp=JSON.parse(JSON.stringify(data))
+            this.treeDataDown=JSON.parse(JSON.stringify(data))
+            // 勾选复现
+            let currentIndexObj = this.allKeys.find(el=>el.selectIndex==this.selectIndex);
+            this.checkedKeysUp=currentIndexObj?currentIndexObj.upKeys:[]
+            this.checkedKeysDown=currentIndexObj?currentIndexObj.downKeys:[]
+            // 禁用复现
+            this.treeDataUp = this.disabledNode(this.treeDataUp,this.checkedKeysDown)
+            this.treeDataDown = this.disabledNode(this.treeDataDown,this.checkedKeysUp)
+
+            console.log('val',this.treeDataUp,this.treeDataDown);
+        },
+        onCheckUp(keys,e){
+            let isHave = this.allKeys.some(el=>el&&el.selectIndex==this.selectIndex)
+            if(isHave){
+                this.allKeys.forEach(el=>{
+                    if(el.selectIndex==this.selectIndex){
+                        el.upKeys=keys
+                    }
+                })
+            }else{
+                this.allKeys.push({
+                    selectIndex:this.selectIndex,
+                    upKeys:keys
+                })
+            }
+            
+            this.treeDataDown=this.disabledNode(this.treeDataDown,keys)// 禁用down
+            console.log('allkeys',this.allKeys);
+        },
+        onCheckDown(keys,e){
+            let isHave = this.allKeys.some(el=>el&&el.selectIndex==this.selectIndex)
+            if(isHave){
+                this.allKeys.forEach(el=>{
+                    if(el.selectIndex==this.selectIndex){
+                        el.downKeys=keys
+                    }
+                })
+            }else{
+                this.allKeys.push({
+                    selectIndex:this.selectIndex,
+                    downKeys:keys
+                })
+            }
+            this.treeDataUp=this.disabledNode(this.treeDataUp,keys)// 禁用down
+            console.log('allkeys',this.allKeys);
+        },
+        disabledNode(list,keys){
+            list.forEach(el=>{
+                if(el.children&&el.children!==null){
+                    this.disabledNode(el.children,keys)
+                }
+                if(keys.includes(el.id)){
+                    this.$set(el,'disabled',true)
+                }else{
+
+                    this.$delete(el,'disabled')
+                }
+            })
+            return list
         }
     }
 }

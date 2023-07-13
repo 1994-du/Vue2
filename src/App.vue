@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="menus">
-      <el-button v-for="(item,index) in menus" @click="$router.push(item.path)">{{ item.name }}</el-button>
+      <el-button v-for="(item,index) in menus" :key="item.name" @click="$router.push(item.path)">{{ item.name }}</el-button>
     </div>
     <div class="content">
       <router-view></router-view>
