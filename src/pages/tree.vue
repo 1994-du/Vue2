@@ -44,9 +44,11 @@ export default{
             },
             selectIndex:'0',
             allKeys:[]
+            
         }
     },
     mounted(){
+        console.log(_.cloneDeep(JSON.parse(JSON.stringify(data))));
         this.treeDataUp=JSON.parse(JSON.stringify(data))
         this.treeDataDown=JSON.parse(JSON.stringify(data))
     },

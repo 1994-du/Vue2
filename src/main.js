@@ -17,6 +17,8 @@ Vue.use(Elementui)
 
 import axios from "@/axios"
 Vue.prototype.$axios=axios
+import _ from 'lodash'
+window._=_;
 Vue.config.productionTip = false
 // import test from '@/pages'
 // console.log(test)
