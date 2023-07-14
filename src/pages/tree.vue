@@ -44,7 +44,6 @@ export default{
             },
             selectIndex:'0',
             allKeys:[]
-            
         }
     },
     mounted(){
