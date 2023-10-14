@@ -21,6 +21,12 @@ const router = new Router({
         name:'tree',
         // component:import('@/pages/vue3.vue')
         component:resolve=>require(['@/pages/tree.vue'],resolve)
+    },
+    {
+        path:'/time',
+        name:'time',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/time.vue'],resolve)
     }
   ]
 })
