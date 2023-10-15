@@ -10,16 +10,21 @@
     <dx-button @click="$router.push('/useAxios')">axios</dx-button>
     <dx-button @click="$router.push('/useHttp')">HTTP</dx-button> -->
    <img src="@/assets/devServer-headers.png" alt="子应用设置允许跨域" title="子应用设置允许跨域"/>
+   <square></square>
 </div>
 </template>
 
 <script>
+import square from './../components/square.vue'
 export default {
-name:'',
+name:'Home',
 data() {
     return {
         code:''
     };
+},
+components:{
+    square
 },
 computed: {},
 watch: {},
