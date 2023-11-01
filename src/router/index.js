@@ -27,6 +27,12 @@ const router = new Router({
         name:'time',
         // component:import('@/pages/vue3.vue')
         component:resolve=>require(['@/pages/time.vue'],resolve)
+    },
+    {
+        path:'/gitUse',
+        name:'gitUse',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/gitUse.vue'],resolve)
     }
   ]
 })
