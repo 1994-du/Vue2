@@ -33,6 +33,12 @@ const router = new Router({
         name:'ainput',
         // component:import('@/pages/vue3.vue')
         component:resolve=>require(['@/pages/aInput.vue'],resolve)
+    },
+    {
+      path:'/gitUse',
+        name:'gitUse',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/gitUse.vue'],resolve)
     }
   ]
 })
