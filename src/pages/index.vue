@@ -10,7 +10,7 @@
     <dx-button @click="$router.push('/useAxios')">axios</dx-button>
     <dx-button @click="$router.push('/useHttp')">HTTP</dx-button> -->
    <img src="@/assets/devServer-headers.png" alt="子应用设置允许跨域" title="子应用设置允许跨域"/>
-   <square></square>
+   <!-- <square></square> -->
 </div>
 </template>
 
