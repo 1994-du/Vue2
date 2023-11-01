@@ -1,6 +1,7 @@
 <!--  -->
 <template>
 <div  class="home">
+    <div>demo1</div>
     <p>使用MicroApp微前端框架</p>
     <p>自定义指令、http、插槽、路由</p>
     <!-- <dx-button type="default" @click="$router.push('/customerDirective')">自定义指令</dx-button>
