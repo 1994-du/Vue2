@@ -39,6 +39,30 @@ const router = new Router({
         name:'gitUse',
         // component:import('@/pages/vue3.vue')
         component:resolve=>require(['@/pages/gitUse.vue'],resolve)
+    },
+    {
+      path:'/watch',
+        name:'watch',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/watch.vue'],resolve)
+    },
+    {
+      path:'/sync',
+        name:'sync',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/sync.vue'],resolve)
+    },
+    {
+      path:'/drawflow',
+        name:'drawflow',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/drawflow.vue'],resolve)
+    },
+    {
+      path:'/antvx6',
+        name:'antv_x6',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/antv_X6.vue'],resolve)
     }
   ]
 })

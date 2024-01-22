@@ -1,8 +1,21 @@
 <!--  -->
 <template>
 <div>
-    <button style="background-color: aquamarine;">
-        <slot/>
+    modelValue:【{{ modelValue }}】、
+    value:【{{ value }}】 、
+    title:【{{ title }}】 、
+    other:【{{ other }}】 、
+    <button @click="changeModelValue">
+        修改modelValue
+    </button>
+    <button @click="changeValue">
+        修改value
+    </button>
+    <button @click="change">
+        修改title
+    </button>
+    <button @click="changeOther">
+        修改other
     </button>
 </div>
 </template>
@@ -13,6 +26,16 @@
 
 export default {
 name:'dx-button',
+model:{
+    prop:'modelValue',
+    event:'changModel'
+},
+props:{
+    modelValue:String,
+    value:String,
+    title:String,
+    other:String
+},
 //import引入的组件需要注入到对象中才能使用
 components: {},
 data() {
@@ -27,7 +50,18 @@ computed: {},
 watch: {},
 //方法集合
 methods: {
-
+    change(){
+        this.$emit('update:title','changeTitle')
+    },
+    changeOther(){
+        this.$emit('update:other','changeOther')
+    },
+    changeValue(){
+        this.$emit('input','changeValue')
+    },
+    changeModelValue(){
+        this.$emit('changModel','changeModelValue')
+    }
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {
