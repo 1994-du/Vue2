@@ -1,36 +1,43 @@
-<!--  -->
 <template>
-<div  class="home">
-    <p>使用MicroApp微前端框架</p>
-    <p>自定义指令、http、插槽、路由</p>
-    <!-- <dx-button type="default" @click="$router.push('/customerDirective')">自定义指令</dx-button>
-    <dx-button type="default" @click="$router.push('/useRoute')">路由导航钩子函数</dx-button>
-    <dx-button type="default" @click="$router.push('/useSlot')">插槽</dx-button>
-    <dx-button type="default" @click="$router.push('/useElectronApp')">创建electron桌面应用项目</dx-button>
-    <dx-button @click="$router.push('/useAxios')">axios</dx-button>
-    <dx-button @click="$router.push('/useHttp')">HTTP</dx-button> -->
-   <img src="@/assets/devServer-headers.png" alt="子应用设置允许跨域" title="子应用设置允许跨域"/>
-   <!-- <square></square> -->
-</div>
+    <div  class="home">
+    <dx-button>按钮测试</dx-button>
+    <square></square>
+    <circulation-collapse :data="treeData" @expand="expandHandle"></circulation-collapse>
+    </div>
 </template>
 
 <script>
-import square from './../components/square.vue'
+import datas from "./../json/tree.json"
 export default {
 name:'Home',
 data() {
     return {
-        code:''
+        code:'',
+        treeData:[]
     };
-},
-components:{
-    square
 },
 computed: {},
 watch: {},
-methods: {},
+methods: {
+    recursionFun(list,item){
+        list.forEach(el=>{
+            if(el.id==item.id){
+                el.collapse=!el.collapse
+            }
+            if(el.children&&el.children.length>0){
+                this.recursionFun(el.children,item)
+            }
+        })
+    }
+    ,
+    expandHandle(item){
+        this.recursionFun(this.treeData,item)
+    }
+},
 created() {},
 mounted() {
+    this.treeData=datas
+
     // let str='"devServer":{"port":1111,"headers":{"Access-Control-Allow-Origin":'*'}}';
     // this.code=JSON.parse(str)
     // let pre = document.getElementsByTagName('pre')[0]
@@ -64,4 +71,4 @@ img{
     width: 400px;
     height: auto;
 }
-</style>
+</style>../components/circulationCollapse.vue

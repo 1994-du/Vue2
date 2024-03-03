@@ -5,11 +5,11 @@ import App from './App'
 import router from './router'
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
-// import globalUi from "./components/index.js";
-// Vue.use(globalUi)
+import globalUi from "./components/index2.js";
+Vue.use(globalUi)
 Vue.use(Antd)
-import dxUI from "dxtestui"
-Vue.use(dxUI)
+// import dxUI from "dxtestui"
+// Vue.use(dxUI)
 
 import Elementui from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';

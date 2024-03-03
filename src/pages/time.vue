@@ -8,13 +8,19 @@
             @panelChange="PanelChange"
             v-model="yearValue"
         />
+        <quarter v-model="testval"></quarter>
     </div>
 </template>
 <script>
 import moment from 'moment';
+import quarter from './quarter.vue'
 export default{
+    components:{
+        quarter
+    },
     data(){
         return{
+            testval:'',
             dateFormat:'YYYY',
             yearValue:''
         }

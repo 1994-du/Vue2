@@ -2,20 +2,31 @@
     {
         "id":"0",
         "name":"指标一",
+        "collapse":false,
         "children":[
             {
                 "id":"0-1",
                 "name":"指标一一",
-                "children":null
+                "collapse":false,
+                "children":[
+                    {
+                        "id":"0-1-1",
+                        "name":"指标一一一",
+                        "collapse":false,
+                        "children":null
+                    }
+                ]
             },
             {
                 "id":"0-2",
                 "name":"指标一二",
+                "collapse":false,
                 "children":null
             },
             {
                 "id":"0-3",
                 "name":"指标一三",
+                "collapse":false,
                 "children":null
             }
         ]
@@ -23,20 +34,24 @@
     {
         "id":"1",
         "name":"指标二",
+        "collapse":false,
         "children":[
             {
                 "id":"1-1",
                 "name":"指标二一",
+                "collapse":false,
                 "children":null
             },
             {
                 "id":"1-2",
                 "name":"指标二二",
+                "collapse":false,
                 "children":null
             },
             {
                 "id":"1-3",
                 "name":"指标二三",
+                "collapse":false,
                 "children":null
             }
         ]
@@ -44,20 +59,24 @@
     {
         "id":"2",
         "name":"指标三",
+        "collapse":false,
         "children":[
             {
                 "id":"2-1",
                 "name":"指标三一",
+                "collapse":false,
                 "children":null
             },
             {
                 "id":"2-2",
                 "name":"指标三二",
+                "collapse":false,
                 "children":null
             },
             {
                 "id":"2-3",
                 "name":"指标三三",
+                "collapse":false,
                 "children":null
             }
         ]

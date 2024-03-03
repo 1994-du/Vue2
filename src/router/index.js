@@ -63,6 +63,24 @@ const router = new Router({
         name:'antv_x6',
         // component:import('@/pages/vue3.vue')
         component:resolve=>require(['@/pages/antv_X6.vue'],resolve)
+    },
+    {
+      path:'/form',
+        name:'form',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/useForm.vue'],resolve)
+    },
+    {
+      path:'/quarter',
+        name:'季度选择器',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/quarter.vue'],resolve)
+    },
+    {
+      path:'/collapse',
+        name:'折叠面板',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/collapse.vue'],resolve)
     }
   ]
 })

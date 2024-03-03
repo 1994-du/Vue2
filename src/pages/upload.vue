@@ -12,7 +12,7 @@
         <a-upload name="file" :multiple="false" :showUploadList="false" @change="handChange" :beforeUpload="(file)=>handBeforeChange(file,3)" :remove="handRemove">
             <a-button :class="resarr.indexOf(3)>-1?'active':''"> <a-icon type="upload" /> 规则 </a-button>
         </a-upload>
-        <a-button @click="getRes">导入{{ resarr }}</a-button>
+        <a-button @click="getRes">导入</a-button>
     </div>
 </template>
 <script>
