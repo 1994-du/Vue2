@@ -5,23 +5,22 @@
 -->
 <template>
     <div class="circulation_collapse">
-        <div v-for="(item,index) in data" :key="item.id">
-            <div class="collapse_item" @click="changeShow(item)">{{ item.name }}</div>
-            <circulation_collapse 
+        <div v-for="(item,index) in data" :key="item.id" class="circulation_collapse_item">
+            <div class="collapse_item" @click="changeShow(item)">
+                <span>{{ item.name }}</span>
+                <i v-if="item.children && item.children.length > 0" class="el-icon-arrow-down" :class="item.collapse?'active':''"></i>
+            </div>
+            <circulation-collapse 
                 v-if="item.children && item.children.length > 0 && item.collapse" :data="item.children"
                 @expand="changeShow">
-            </circulation_collapse>
+            </circulation-collapse>
         </div>
     </div>
 </template>
 
 <script>
-import circulation_collapse from './circulationCollapse.vue'
 export default {
     name: 'circulation-collapse',
-    components: {
-        circulationCollapse: circulation_collapse
-    },
     props: {
         data: Array,
         collapse: Boolean
@@ -38,3 +37,29 @@ export default {
     }
 }
 </script>
+<style lang="less" scoped>
+.circulation_collapse{
+    padding: 10px;
+    user-select: none;
+    &_item{
+        line-height: 40px;
+        text-align: left;
+        text-indent: 12px;
+        
+        .el-icon-arrow-down{
+            transform-origin: 70% 50%;
+            transition: all 0.3s;
+            margin-right: 10px;
+        }
+        .active{
+            transform: rotate(180deg);
+        }
+        .collapse_item{
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+</style>

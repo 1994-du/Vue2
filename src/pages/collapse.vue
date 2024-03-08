@@ -1,14 +1,15 @@
 <template>
     <div class="collapse">
         <p>折叠面板</p>
-        <collapse :data="treeData" @expand="expandHandle"></collapse>
+        <circulation-collapse :data="treeData" @expand="expandHandle"></circulation-collapse>
+
+        <p>dxtestui</p>
+        <dx-collapse :data="treeData" @expand="expandHandle"></dx-collapse>
     </div>
 </template>
 <script>
 import demoData from "./../json/tree.json";
-import collapse from "@/components/circulationCollapse.vue"
 export default{
-    components:{collapse},
     data(){
         return{
             treeData:[]
@@ -29,6 +30,7 @@ export default{
             })
         },
         expandHandle(item){
+            console.log('item',item);
             this.recursionFun(this.treeData,item)
         }
     }

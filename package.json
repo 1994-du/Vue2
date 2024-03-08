@@ -14,7 +14,7 @@
     "@jridgewell/sourcemap-codec": "^1.4.14",
     "@micro-zoe/micro-app": "^0.8.10",
     "ant-design-vue": "^1.7.8",
-    "dxtestui": "^0.2.5",
+    "dxtestui": "^0.2.9",
     "element-ui": "^2.15.9",
     "lodash": "^4.17.21",
     "vue": "^2.5.2",
@@ -64,6 +64,11 @@
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": [
     "> 1%",

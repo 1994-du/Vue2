@@ -44,6 +44,7 @@ export default {
   .menus{
     display: flex;
     flex-direction: column;
+    overflow: auto;
     .el-button{
       margin: 5px 0;
     }

@@ -1,7 +1,6 @@
 <template>
     <div  class="home">
     <dx-button>按钮测试</dx-button>
-    <square></square>
     <circulation-collapse :data="treeData" @expand="expandHandle"></circulation-collapse>
     </div>
 </template>
