@@ -1,7 +1,6 @@
 <template>
     <div  class="home">
     <dx-button>按钮测试</dx-button>
-    <circulation-collapse :data="treeData" @expand="expandHandle"></circulation-collapse>
     </div>
 </template>
 
@@ -36,7 +35,10 @@ methods: {
 created() {},
 mounted() {
     this.treeData=datas
-
+    console.log(this.$bus);
+    this.$bus.$on('bustest',(data)=>{
+        console.log('bus',data)
+    })
     // let str='"devServer":{"port":1111,"headers":{"Access-Control-Allow-Origin":'*'}}';
     // this.code=JSON.parse(str)
     // let pre = document.getElementsByTagName('pre')[0]

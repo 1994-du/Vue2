@@ -17,6 +17,10 @@ Vue.use(Elementui)
 
 import axios from "@/axios"
 Vue.prototype.$axios=axios
+
+// import globalBus from './globalBus.js';
+import globalBus from "./bus.js"
+Vue.use(globalBus)
 import _ from 'lodash'
 window._=_;
 Vue.config.productionTip = false
