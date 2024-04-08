@@ -81,6 +81,18 @@ const router = new Router({
         name:'折叠面板',
         // component:import('@/pages/vue3.vue')
         component:resolve=>require(['@/pages/collapse.vue'],resolve)
+    },
+    {
+      path:'/uploadFile',
+        name:'form校验上传文件',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/formUpload.vue'],resolve)
+    },
+    {
+      path:'/flute',
+        name:'荒',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/flute.vue'],resolve)
     }
   ]
 })
