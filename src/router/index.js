@@ -93,6 +93,12 @@ const router = new Router({
         name:'荒',
         // component:import('@/pages/vue3.vue')
         component:resolve=>require(['@/pages/flute.vue'],resolve)
+    },
+    {
+      path:'/debounce',
+        name:'防抖',
+        // component:import('@/pages/vue3.vue')
+        component:resolve=>require(['@/pages/debounce.vue'],resolve)
     }
   ]
 })
