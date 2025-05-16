@@ -25,7 +25,10 @@ export default {
       return this.$router.options.routes
     }
   },
-  mounted(){}
+  mounted(){
+    console.log(this.menus);
+    
+  }
 }
 </script>
 
@@ -38,7 +41,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   display: flex;
-//   flex-direction: column;
   height: 100%;
   @fontSize:12px;
   .menus{

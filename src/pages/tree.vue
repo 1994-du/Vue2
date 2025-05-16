@@ -1,17 +1,17 @@
 <template>
     <div class="tree_tmp">
-        <a-select style="width: 120px" @change="handleChange" v-model="selectIndex">
-            <a-select-option value="0">
+        <el-select style="width: 120px" @change="handleChange" v-model="selectIndex">
+            <el-option value="0">
                 Jack
-            </a-select-option>
-            <a-select-option value="1">
+            </el-option>
+            <el-option value="1">
                 Lucy
-            </a-select-option>
-            <a-select-option value="2">
+            </el-option>
+            <el-option value="2">
                 Disabled
-            </a-select-option>
-        </a-select>
-        <a-tree
+            </el-option>
+        </el-select>
+        <el-tree
             v-model="checkedKeysUp"
             checkable
             :tree-data="treeDataUp"
@@ -19,7 +19,7 @@
             @check="onCheckUp"
         />
         <hr>
-        <a-tree
+        <el-tree
             v-model="checkedKeysDown"
             checkable
             :tree-data="treeDataDown"
@@ -47,7 +47,9 @@ export default{
         }
     },
     mounted(){
-        console.log(_.cloneDeep(JSON.parse(JSON.stringify(data))));
+        console.log(_);
+        
+        // console.log(_.cloneDeep(JSON.parse(JSON.stringify(data))));
         this.treeDataUp=JSON.parse(JSON.stringify(data))
         this.treeDataDown=JSON.parse(JSON.stringify(data))
     },
